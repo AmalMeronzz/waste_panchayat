@@ -3,8 +3,9 @@ from django.shortcuts import render,redirect
 from django.db import connection
 
 # Create your views here.
-def temp_function():
-    return 1+2
+def temp_122function():
+    print('amalaalalallda')
+    return "dsdsdds"
 
 
 def logout(request):
