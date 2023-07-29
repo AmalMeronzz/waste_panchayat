@@ -3,6 +3,9 @@ from django.shortcuts import render,redirect
 from django.db import connection
 
 # Create your views here.
+def temp_function():
+    return 1+1
+
 
 def logout(request):
     return redirect('login')
