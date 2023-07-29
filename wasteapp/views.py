@@ -4,7 +4,7 @@ from django.db import connection
 
 # Create your views here.
 def temp_function():
-    return 1+1
+    return 1+2
 
 
 def logout(request):
