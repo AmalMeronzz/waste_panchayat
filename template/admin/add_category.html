@@ -1,0 +1,31 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card" style="min-height:550px;">
+                  <div class="card-body">
+
+                    <center>
+                      <h2 class="card-title" style="text-transform: uppercase;">ADD CATEGORY</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                          <form   method="post">
+                              {% csrf_token %}
+                      <table class="table">
+                          <tr>
+                              <th style="width:100px;">CATEGORY NAME</th>
+                              <td><input type="text"  name="name" required></td>
+                          </tr>
+                          <tr>
+                              <th style="width:100px;">PRICE </th>
+                              <td><input type="number"  name="price" required></td>
+                          </tr>
+                          <tr>
+                              <th></th>
+                              <td><input type="submit" value="save"></td>
+                          </tr>
+                      </table>
+                          </form>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

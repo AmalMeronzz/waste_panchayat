@@ -1,0 +1,163 @@
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <title>intelligent waste application</title>
+<!--
+
+ART FACTORY
+
+https://templatemo.com/tm-537-art-factory
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="../../../static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/assets/css/templatemo-art-factory.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/assets/css/owl-carousel.css">
+
+    </head>
+
+
+        <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+
+        }
+    </style>
+
+    <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky" style="background-color:#4fbce3;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#"class="logo">waste application</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="../../panchayathome">home</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">booking</a>
+                                <ul>
+                                    <li><a href="../../viewbookingrequest">booking request</a></li>
+                                    <li><a href="../../bookeduser">booked list</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">worker</a>
+                                <ul>
+                                     <li><a href="../../addworker">add worker</a></li>
+                                     <li><a href="../../viewworkers">view workers</a></li>
+                                     <li><a href="../../viewworkers1">add payment</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="../../recycleditems">recycled</a></li>
+                            <li class="scroll-to-section"><a href="../../viewcomplaint">complaints</a></li>
+                             <li class="scroll-to-section"><a href="../../login">logout</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+
+    <div style="min-height:550px;">
+<br><br><br><br><br>
+    <center><h2><strong>RECYCLE CATEGORY</strong></h2></center><br><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center"><h4>NAME</h4></div></th>
+        <th class="header-item items"><div align="center"><h4>DESCRIPTION</h4></div></th>
+
+    </tr>
+
+    {% for i in data %}
+      <form method="post">
+          {% csrf_token %}
+  <tr>
+      <td class="items"><div align="center"><h5>{{ i.1 }}</h5></div></td>
+      <td class="items"><div align="center"><textarea name="description" required></textarea></div></td>
+      <td width="80"><div align="center" ><button style="color:white; background:#4fbce3;">confirm</button></div></td>
+      <td><input type="hidden" value="{{i.0}}" name="idrecycle_category"></td>
+      <td></td>
+  </tr>
+          {% endfor %}
+      </form>
+</table>
+    </div>
+
+    <footer style="background:black;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <p class="copyright">Copyright &copy; 2023 intelligent waste application
+                . Design: Elza</p>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../../../static/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../../../static/assets/js/popper.js"></script>
+    <script src="../../../static/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="../../../static/assets/js/owl-carousel.js"></script>
+    <script src="../../../static/assets/js/scrollreveal.min.js"></script>
+    <script src="../../../static/assets/js/waypoints.min.js"></script>
+    <script src="../../../static/assets/js/jquery.counterup.min.js"></script>
+    <script src="../../../static/assets/js/imgfix.min.js"></script>
+
+    <!-- Global Init -->
+    <script src="../../../static/assets/js/custom.js"></script>
+
+  </body>
+</html>

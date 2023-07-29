@@ -1,0 +1,88 @@
+{% extends 'worker/index.html' %}
+{% block content %}
+
+
+<html>
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #cs td, #cs th {
+
+                padding: 8px;
+            }
+            #cs tr:hover {
+                background-color: #ddd;
+            }
+
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+             #cs input[type=submit]{
+ font-size: 13px;
+  border-radius: 20px;
+  padding: 12px 20px;
+  background-color: #00b4c6;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.25px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+#cs input[type=submit]:hover {
+  background-color: #0088e8;
+}
+    </style>
+</head>
+<body>
+<p>
+
+</p>
+<div style="min-height:550px;"><br><br><br><br><br><br><br><br>
+
+<center>
+
+        <table width="618" border="0" id="cs">
+            <tr>
+                <td></td>
+                <td><h2>LEAVE FORM</h2><br></td>
+
+            </tr>
+            <tr>
+                <td>Leave date</td>
+                <td><input type="date" value="{{data.3}}" name="date"></td>
+            </tr>
+             <tr>
+                  <td>Matter</td>
+                  <td colspan="2">
+                      <label>
+                          <textarea style="width:600px; height:300px;"  placeholder="description" name="details" required >{{data.2}}</textarea>
+                      </label>
+                  </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <label>
+                        <input type="submit" name="Submit" value="Submit" class="section-btn"/>
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+    </center>
+    </div>
+</body>
+</html>
+
+
+
+{% endblock %}

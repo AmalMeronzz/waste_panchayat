@@ -1,0 +1,34 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+
+<div class="card">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title"><strong>RECYCLE CATEGORY
+                      </strong></h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                              <th style="width:200px; color:white;"><h3>No.</h3></th>
+                              <th style="width:400px; color:white;"><h3>RECYCLE CATEGORY NAME</h3></th>
+
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td> <h4>{{ forloop.counter }}</h4></td>
+                              <td><h4>{{i.0}}</h4></td>
+
+                              <td><a href="../deleterecyclecategory/{{i.1}}"><div class="badge badge-outline-danger">Delete</div></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

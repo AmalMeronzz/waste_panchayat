@@ -1,0 +1,40 @@
+{% extends 'user/index.html' %}
+{% block content %}
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+}
+    </style>
+<div style="min-height:550px;">
+<br><br><br><br><br>
+    <center><h2><strong>COMPLAINTS</strong></h2></center><br><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center"><h4>DATE</h4></div></th>
+        <th class="header-item items"><div align="center"><h4>COMPLAINT</h4></div></th>
+        <th class="header-item items"><div align="center"><h4>PANCHAYAT REPLY</h4></div></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+  {% for i in data %}
+  <tr>
+      <td class="items"><div align="center"><h5>{{ i.2 }}</h5></div></td>
+      <td class="items"><div align="center"><h5>{{ i.3 }}</h5></div></td>
+      <td class="items"><div align="center"><h5>{{ i.4 }}</h5></div></td>
+  </tr>
+ {% endfor %}
+</table>
+    </div>
+{% endblock %}

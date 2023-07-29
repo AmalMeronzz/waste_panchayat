@@ -1,0 +1,34 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+
+<div class="card">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">DISTRICT LIST</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                                <th style="width:200px; color:white;"><h3>No.</h3></th>
+                              <th style="width:400px; color:white;"><h3>DISTRICT NAME</h3></th>
+                              <th style="color:white;"><h3>ADD TALUK</h3></th>
+
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                                <td> <h4>{{ forloop.counter }}</h4></td>
+                                <td><h4>{{i.1}}</h4></td>
+                                <td><a href="../addtaluk/{{i.0}}"><div class="badge badge-outline-success">Add Taluk</div></a></td>
+                              <td><a href="../deletedistrict/{{i.0}}"><div class="badge badge-outline-danger">delete</div></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

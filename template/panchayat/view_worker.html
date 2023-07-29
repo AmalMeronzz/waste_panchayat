@@ -1,0 +1,48 @@
+{% extends 'panchayat/index.html' %}
+{% block content %}
+<head>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+}
+    </style>
+</head>
+<br><br><br><br><br>
+
+<div style="min-height:500px;">
+
+
+<center><h2>BOOKED LIST</h2></center><br><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center">WORKER NAME</div></th>
+        <th class="header-item items"><div align="center">ADDRESS</div></th>
+        <th class="header-item items"><div align="center">PHONE</div></th>
+        <th class="header-item items"><div align="center">EMAIL</div></th>
+        <th colspan="2"></th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td class="items" height="87"><div align="center">{{ row.2 }}</div></td>
+      <td class="items"><div align="center">{{ row.5 }}</div></td>
+      <td class="items"><div align="center">{{ row.3 }}</div></td>
+      <td class="items" height="87"><div align="center">{{ row.4}}</div></td>
+      <td width="80"><div align="center" ><a href="../deleteworker/{{row.0}}"><button style="color:RED; border-color:RED;;">DELETE</button></a></div></td>
+
+      {% endfor %}
+  </tr>
+
+
+</table>
+    </div>
+{% endblock %}

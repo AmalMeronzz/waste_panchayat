@@ -1,0 +1,42 @@
+{% extends 'panchayat/index.html' %}
+{% block content %}
+<head>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+}
+    </style>
+</head>
+<br><br><br><br><br>
+
+<div style="min-height:500px;">
+
+
+<center><h2>WORKERS</h2></center><br><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center">WORKER NAME</div></th>
+        <th class="header-item items"><div align="center">LEAVE LETTER</div></th>
+
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td class="items" height="87"><div align="center">{{ row.1 }}</div></td>
+      <td><div align="center" ><a href="../viewworkerleave/{{row.0}}"><button style="color:white;background:#4fbce3;">view</button></a></div></td>
+      {% endfor %}
+  </tr>
+
+
+</table>
+    </div>
+{% endblock %}

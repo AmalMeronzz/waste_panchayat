@@ -1,0 +1,45 @@
+{% extends 'user/index.html' %}
+{% block content %}
+<head>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+    </style>
+</head>
+<br><br><br><br><br>
+
+<div style="min-height:500px;">
+
+
+<center><h2>BOOKING REQUEST</h2></center><br><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center">CATEGORY</div></th>
+        <th class="header-item items"><div align="center">AMOUNT</div></th>
+        <th class="header-item items"><div align="center">WASTE DESCRIPTION</div></th>
+        <th></th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+       <td class="items" height="87"><div align="center">{{ row.3}}</div></td>
+      <td class="items"><div align="center">{{ row.2 }}</div></td>
+      <td class="items"><div align="center">{{ row.1 }}</div></td>
+      <td width="80"><div align="center" ><a href="../makepayment/{{row.4}}"><button style="background:orange; color:white;">MAKE PAYMENT</button></a></div></td>
+
+      {% endfor %}
+  </tr>
+
+
+</table>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card">
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">HOSPITAL LIST</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                                <th>No.</th>
+                                <th>PANCHAYAT</th>
+                                <th>ADDRESS</th>
+                                <th>PLACE</th>
+                                <th>PHONE</th>
+                                <th>EMAIL</th>
+                                <th>DISTRICT</th>
+                                <th>TALUK</th>
+                                <th>PASSWORD</th>
+
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                                <td> {{ forloop.counter }}</td>
+                                <td>{{i.0}}</td>
+                                <td>{{i.1}}</td>
+                                <td>{{i.2}}</td>
+                                <td>{{i.3}}</td>
+                                <td>{{i.4}}</td>
+                                <td>{{i.8}}</td>
+                                <td>{{i.9}}</td>
+                                <td>{{i.7}}</td>
+                                <td><a href="../editpanchayat/{{i.0}}"><div class="badge badge-outline-info">EDIT</div></a></td>
+                                <td><a href="../deletepanchayat/{{i.0}}"><div class="badge badge-outline-danger">DELETE</div></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

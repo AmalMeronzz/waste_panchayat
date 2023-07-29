@@ -1,0 +1,46 @@
+{% extends 'user/index.html' %}
+{% block content %}
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+}
+    </style>
+<div style="min-height:550px;">
+<br><br><br><br><br>
+    <center><h2><strong>VIEW CATEGORY</strong></h2></center><br><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center"><h4>CATEGORY NAME</h4></div></th>
+        <th class="header-item items"><div align="center"><h4>PRICE PER/KG</h4></div></th>
+        <th class="header-item items"><div align="center"><h4>QUANTITY</h4></div></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    {% for i in data %}
+      <form action="../addbooking/{{i.0}}" method="post">
+          {% csrf_token %}
+
+  <tr>
+      <td class="items" height="87"><div align="center"><h5>{{ i.1 }}</h5></div></td>
+      <td class="items"><div align="center"><h5>{{ i.2 }}</h5></div></td>
+      <td width="60"><input type="number" placeholder="Enter kg" name="kg" required></td>
+      <td width="60"><input type="submit" style="background:#4fbce3;; color:white; width:100px; height:40px;" value="select" ></td>
+  </tr>
+          {% endfor %}
+      </form>
+</table>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% include 'LoginHeader.html' %}
+
+<div align="center"  class="contact-form">
+     <h1 style="color:white" ><strong>SELECT PANCHAYAT</strong></h1><br><br>
+    <center>
+    <table>
+        <tr>
+            <th><h4 style="width:250px; color:white;">PANCHAYAT</h4></th>
+            <th><h4 style="widht:250px; color:white;">SELECT</h4></th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><h6 style="color:white;">{{i.0}}</h6></td>
+            <td><a href="../userregister/{{i.0}}"><button style="background:white; color:#17a2b8; width:80px; height:30px;"><strong>select</strong></button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+        </center>
+</div>
+
+
+{% include 'PageFooter.html' %}
